@@ -51,7 +51,8 @@ response = requests.get(url)
 
 # response.json()
 # response.json()['metadata']
-response.json()['features'][0]
+# response.json()['features']
+response.json()['features'][15]
 
 # METADATA ********************
 
@@ -59,3 +60,11 @@ response.json()['features'][0]
 # META   "language": "python",
 # META   "language_group": "synapse_pyspark"
 # META }
+
+# MARKDOWN ********************
+
+# Test Notebook with VS Code
+
+# CELL ********************
+
+response.json()['features'][14]['properties']['mag']
