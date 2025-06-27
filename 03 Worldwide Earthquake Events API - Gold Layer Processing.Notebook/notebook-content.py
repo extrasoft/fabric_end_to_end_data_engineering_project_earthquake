@@ -44,6 +44,17 @@ import reverse_geocoder as rg
 
 # CELL ********************
 
+print("Parameter start_date is ", start_date)
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
 df = spark.read.table("earthquake_events_silver").filter(col('time') > start_date)
 
 # METADATA ********************

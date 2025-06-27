@@ -24,21 +24,37 @@
 
 # # <mark></mark>Worldwide Earthquake Events API - Bronze Layer Processing
 
-# MARKDOWN ********************
-
-# #### Initial default parameters
-
 # CELL ********************
 
 from datetime import date, timedelta
 
-# start_date = previous 7 days
-# end_date = yesterday
-start_date = date.today() - timedelta(7) 
-end_date = date.today() - timedelta(1) 
+# METADATA ********************
 
-# url = f"https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={start_date}&endtime={end_date}"
-# print(url)
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# MARKDOWN ********************
+
+# ##### Initial default parameters and set toggle parameter cell
+
+# PARAMETERS CELL ********************
+
+start_date = date.today() - timedelta(7) 
+end_date = date.today() - timedelta(1)
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+print("Parameter start_date is ", start_date)
+print("Parameter end_date is ", end_date)
 
 # METADATA ********************
 
@@ -58,6 +74,7 @@ import json
 
 # Construct the API URL with start and end dates provided by Data Factory, formatted for geojson output.
 url = f"https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime={start_date}&endtime={end_date}"
+print("Get url API: ", url)
 
 # Make the GET request to fetch data
 response = requests.get(url)
@@ -83,19 +100,6 @@ if response.status_code == 200:
     print(f"Data successfully saved to {file_path}")
 else:
     print("Failed to fetch data. Status code:", response.status_code)
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
-# META }
-
-# CELL ********************
-
-df = spark.read.option("multiline", "true").json(f"Files/{start_date}_earthquake_data.json")
-# df now is a Spark DataFrame containing JSON data from "Files/{start_date}_earthquake_data.json".
-display(df)
 
 # METADATA ********************
 

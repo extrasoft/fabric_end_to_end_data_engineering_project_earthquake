@@ -28,6 +28,7 @@
 
 from pyspark.sql.functions import col
 from pyspark.sql.types import TimestampType
+from datetime import date, timedelta
 
 # METADATA ********************
 
@@ -38,15 +39,22 @@ from pyspark.sql.types import TimestampType
 
 # MARKDOWN ********************
 
-# #### Initial default parameters
+# ##### Initial default parameters and set toggle parameter cell
 
 # CELL ********************
 
-from datetime import date, timedelta
-
-# start_date = previous 7 days
 start_date = date.today() - timedelta(7) 
-print(start_date)
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+print("Parameter start_date is ", start_date)
 
 # METADATA ********************
 
