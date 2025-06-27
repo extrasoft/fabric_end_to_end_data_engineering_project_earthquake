@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "earthquakes_lakehouse"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "fade5720-7495-8f04-4122-26575ad5b400"
+  }
+}
