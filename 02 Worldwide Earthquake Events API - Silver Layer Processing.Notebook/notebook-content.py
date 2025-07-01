@@ -41,7 +41,7 @@ from datetime import date, timedelta
 
 # ##### Initial default parameters and set toggle parameter cell
 
-# CELL ********************
+# PARAMETERS CELL ********************
 
 start_date = date.today() - timedelta(7) 
 

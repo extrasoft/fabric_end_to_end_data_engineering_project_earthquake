@@ -34,6 +34,18 @@ from pyspark.sql.functions import when, col, udf
 from pyspark.sql.types import StringType
 # ensure the below library is installed on your fabric environment
 import reverse_geocoder as rg
+from datetime import date
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# PARAMETERS CELL ********************
+
+start_date = date.today()
 
 # METADATA ********************
 
